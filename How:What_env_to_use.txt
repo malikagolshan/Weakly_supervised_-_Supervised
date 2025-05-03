@@ -1,0 +1,53 @@
+﻿FOR THE GNN CODE
+conda create --name myenv python=3.8
+Add these lines to bin bash:
+# CUDA
+export PATH=/usr/local/cuda-11.2/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64:$LD_LIBRARY_PATH
+# Point to LaTeX distribution
+export MODULEPATH=$MODULEPATH:/global/software/sl-7.x86_64/modfiles/langs
+export MODULEPATH=$MODULEPATH:/global/software/sl-7.x86_64/modfiles/tools
+export MODULEPATH=$MODULEPATH:/global/software/sl-7.x86_64/modfiles/apps
+module load texlive/2016
+
+
+conda install pyg -c pyg
+
+
+conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch
+
+
+FOR THE LHC OLYMPIC CODE
+Use tensorfow 2.15.0 om perlmutter and pip install sklearn 
+
+
+FOR CWOLA
+name: gaia
+channels:
+  - conda-forge
+dependencies:
+    - python=3.10
+    - pip>=19.0
+    - jupyter
+    - scikit-learn
+    - scipy
+    - pandas
+    - pandas-datareader
+    - matplotlib
+    - pillow
+    - tqdm
+    - requests
+    - h5py
+    - pyyaml
+    - flask
+    - boto3
+    - ipykernel
+    - pip:
+        - tensorflow_gpu
+        - bayesian-optimization
+        - gym
+        - kaggle
+        - tables
+        - glob2
+        - gala
+        - astropy
